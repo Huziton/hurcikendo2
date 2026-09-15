@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hurcikendőink – HurciKendő</title>
+<meta name="description" content="Böngéssz a jelenleg elérhető hurcikendők között: állapot, összetétel, méret és ár mindenhol feltüntetve.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="HurciKendő logó">
+      <span class="brand-text">
+        <div class="name">HurciKendő</div>
+        <div class="tagline">Közelebb egymáshoz</div>
+      </span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Főoldal</a>
+      <a href="termekek.html">Termékek</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="hasznos-infok.html">Hasznos infók</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="kapcsolat.html">Kapcsolat</a>
+    <button class="nav-toggle" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="section-head" style="padding-top:48px">
+    <h2>Hurcikendőink</h2>
+    <p>Válogass szeretettel — minden darab egyedi, jó állapotú, és pontosan úgy van leírva, ahogy van.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="product-grid" data-product-grid></div>
+</div>
+
+<div style="height:70px"></div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="margin-bottom:12px">
+          <img src="images/logo.png" alt="HurciKendő logó" style="height:38px">
+        </div>
+        <p>Szeretett, jó állapotú hurcikendők új gazdit keresnek.</p>
+      </div>
+      <div>
+        <h4>Navigáció</h4>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="termekek.html">Termékek</a></li>
+          <li><a href="rolunk.html">Rólunk</a></li>
+          <li><a href="hasznos-infok.html">Hasznos infók</a></li>
+          <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kapcsolat</h4>
+        <ul>
+          <li>hurcikendo@gmail.com</li>
+          <li>Válaszolunk emailben vagy telefonon</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HurciKendő — Közelebb egymáshoz</div>
+  </div>
+</footer>
+
+<!-- Érdeklődés modal -->
+<div class="modal-overlay" id="interest-modal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Bezárás">×</button>
+
+    <div data-form-view>
+      <div class="modal-title">Megrendelési igény</div>
+      <p class="modal-sub">Kérjük, töltsd ki az adataidat, és emailben visszajelzünk a megadott termékkel kapcsolatban!</p>
+
+      <div class="modal-product">
+        <img src="" alt="" data-modal-product-img>
+        <div>
+          <div class="mp-name" data-modal-product-name></div>
+          <div class="mp-price" data-modal-product-price></div>
+        </div>
+      </div>
+
+      <form>
+        <input type="hidden" id="f-product-slug" name="product_slug">
+        <input type="hidden" id="f-product-label" name="product_label">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-field">
+          <label for="f-name">Név <span class="req">*</span></label>
+          <input type="text" id="f-name" name="name" placeholder="Pl. Kovács Anna" required>
+          <div class="err">Add meg a neved.</div>
+        </div>
+
+        <div class="form-field">
+          <label for="f-phone">Telefonszám <span class="req">*</span></label>
+          <input type="tel" id="f-phone" name="phone" placeholder="+36 20 123 4567" required>
+          <div class="err">Add meg egy elérhető telefonszámod.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Küldés</button>
+        <div class="form-status"></div>
+      </form>
+
+      <div class="form-privacy">🔒 Az adataidat bizalmasan kezeljük!</div>
+    </div>
+
+    <div data-success-view class="modal-success" style="display:none">
+      <div class="check">✓</div>
+      <h3>Köszönjük az érdeklődést!</h3>
+      <p style="color:var(--ink-soft)">Hamarosan felvesszük veled a kapcsolatot a megadott elérhetőségen.</p>
+      <button class="btn btn-outline" style="margin-top:16px" onclick="document.getElementById('interest-modal').classList.remove('open'); document.body.style.overflow='';">Bezárás</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
